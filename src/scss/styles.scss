@@ -1,0 +1,56 @@
+// Import all of Bootstrap's CSS
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/mixins/buttons";
+@import "bootstrap/scss/mixins/alert";
+
+//voorbeeld 1 mixin
+.custom-btn{
+  @include button-variant(#ff5733, #ff5555, #fff);
+}
+
+//voorbeeld 2 mixin
+@mixin mybootstrap-button($background, $color, $padding-y, $padding-x, $border-radius, $font-size){
+  @include button-variant($color, $background);
+  @include button-size($padding-y, $padding-x, $font-size, $border-radius);
+}
+
+.mymixin-btn{
+  @include mybootstrap-button(white, blue,10px, 100px, 15px, 30px);
+}
+
+//voorbeeld 3 mixin
+@mixin bootstrap-button($background){
+  $color: #fff;
+  $border: 5%;
+  @if(lightness($background) >= lightness(#aaa)){
+    $color: #333;
+    $border: .2 * lightness($background);
+  }
+  @include button-variant($color, $background, darken($background, $border));
+}
+
+.btn-mixin{
+  @include bootstrap-button(#ff5733);
+}
+//voorbeeld 4 alert mixin
+@mixin myalert($background, $border-width, $border-color, $color){
+  @include alert-variant($background, $border-width, $border-color);
+}
+.myalert{
+  @include myalert(red, 2px, green, blue);
+  .alert-link{
+    background: blue;
+  }
+}
+@mixin my-alert-variant($background, $border-color, $border-width, $color) {
+
+  --#{$prefix}alert-border-width: #{$alert-border-width($border-width)};
+  --#{$prefix}alert-link-color: #{shade-color(blue, 20%)};
+  .alert-link {
+    color: var(--#{$prefix}alert-link-color);
+  }
+  @include alert-variant($background, $border-color, $color);
+}
+.myalert{
+  @include my-alert-variant(yellow, green, 2px, red);
+}
