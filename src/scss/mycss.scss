@@ -1,6 +1,8 @@
 //VARIABELEN ---------------------------------------------
 $myOrange:#f26c4f;
 $myBackground:#020312;
+$myLightGrey:#12141c;
+$myDarkGrey:#0a0c17;
 
 //LETTERTYPES --------------------------------------------
 @font-face {
@@ -19,19 +21,29 @@ $myBackground:#020312;
 //STARTING POINT ALL MOBILE DEVICES ----------------------
 #bghero{
   background: url("../images/bg-hero.jpg") no-repeat center;
+  background-size: cover;
 }
 .bg-selfer{
   background: $myBackground;
-
 }
-
+.bg-mylight{
+  background-color: $myLightGrey;
+}
+.bg-mydark{
+  background-color: $myDarkGrey;
+}
+h2{
+  padding-top: 70px;
+  font-size: 40px;
+}
 h3{
    margin-top: 15px;
    margin-bottom: 15px;
  }
-article{
-  margin-top: 15px;
-  margin-bottom: 40px;
+
+
+#headercontent{
+  margin-left: 35px;
 }
 #socials{
   li{
@@ -45,6 +57,23 @@ article{
 #arrowdown{
   background: $myOrange;
 }
+#myservices{
+  article{
+    margin-top: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: $myLightGrey;
+  }
+}
+#articles{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#newarticles{
+  justify-content: center;
+}
+
+
 
 //STARTING POINT LARGER DEVICES --------------------------
 @media (min-width: 992px) {
@@ -66,6 +95,16 @@ article{
   }
   h2{
     font-size: 60px;
+  }
+  article{
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  #newarticles{
+    justify-content: space-evenly;
   }
 
 }
