@@ -1,5 +1,6 @@
 //VARIABELEN ---------------------------------------------
 $myOrange:#f26c4f;
+$myDarkOrange:#d44729;
 $myBackground:#020312;
 $myLightGrey:#12141c;
 $myDarkGrey:#0a0c17;
@@ -32,6 +33,18 @@ $myDarkGrey:#0a0c17;
 .bg-mydark{
   background-color: $myDarkGrey;
 }
+.w-60{
+  width: 60%;
+}
+.w-80{
+  width: 80%;
+}
+.w-90{
+  width: 90%;
+}
+.top-40{
+  top: 40%;
+}
 h2{
   padding-top: 70px;
   font-size: 40px;
@@ -40,7 +53,14 @@ h3{
    margin-top: 15px;
    margin-bottom: 15px;
  }
-
+.orangetext{
+  color:$myOrange;
+  font-weight: bold;
+  font-size: 20px;
+}
+.border-orange{
+  border-bottom: 2px solid $myOrange;
+}
 
 #headercontent{
   margin-left: 35px;
@@ -71,6 +91,66 @@ h3{
 }
 #newarticles{
   justify-content: center;
+}
+.btn{
+  border-radius: 0px;
+  background: $myOrange;
+  border: none;
+
+  &:hover{
+    background: $myDarkOrange;
+  }
+}
+#hireMeBg{
+  background: url("../images/bg-keyboard.jpg") no-repeat center;
+  background-size: cover;
+  background-color: darkgrey;
+  background-blend-mode: multiply;
+  h3{
+    padding: 25px 0px;
+  }
+}
+#hireMe{
+  button{
+    margin-top:-59px;
+  }
+}
+#mySkills{
+  button{
+    border-radius: 0px;
+    background: transparent;
+    border: 2px white solid;
+
+    &:hover{
+      background: white;
+      color: $myBackground;
+    }
+  }
+}
+
+.overviewbg{
+  &__img{
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+.pOrange{
+  font-size: 55px;
+  color: $myOrange;
+  font-weight: bold;
+  padding: 0px 60px;
+  margin: 0px;
+}
+.pLine{
+  padding-top: 6px;
+  font-size: 45px;
+  color: darkgrey;
+}
+#myTestimonials{
+  img{
+    border-radius: 50%;
+  }
 }
 
 
@@ -105,6 +185,14 @@ h3{
   }
   #newarticles{
     justify-content: space-evenly;
+  }
+  #myInfo{
+    text-align: left !important;
+  }
+  #hireMeBg{
+    h3{
+      padding: 70px 0px;
+    }
   }
 
 }
