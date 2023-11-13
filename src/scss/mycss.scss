@@ -155,7 +155,18 @@ h3{
     border-radius: 50%;
   }
 }
-
+.carousel-indicators {
+  button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 100% !important;
+  }
+}
+.carousel-inner{
+ img{
+   width: 130px;
+ }
+}
 
 
 //STARTING POINT LARGER DEVICES --------------------------
